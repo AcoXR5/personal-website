@@ -2,11 +2,11 @@
   <img alt="Logo" src="https://raw.githubusercontent.com/bchiang7/v4/main/src/images/logo.png" width="100" /-->
 </div>
 <h1 align="center">
-  acoj.com.com - v1
+  acoj.com - v1
 </h1>
 <p align="center">
   The first iteration of <a href="https://brittanychiang.com" target="_blank">brittanychiang.com</a> 
-  
+
 ## 🎨 Color Reference
 
 | Color          | Hex                                                                |
