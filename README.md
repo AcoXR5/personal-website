@@ -5,7 +5,7 @@
   acoj.com - v1
 </h1>
 <p align="center">
-  The first iteration of <a href="https://brittanychiang.com" target="_blank">brittanychiang.com</a> 
+  The first iteration of <a href="https://acoxj.com" target="_blank">acoxj.com</a> 
 
 ## 🎨 Color Reference
 
