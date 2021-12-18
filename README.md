@@ -11,8 +11,8 @@
 
 | Color          | Hex                                                                |
 | -------------- | ------------------------------------------------------------------ |
-| Rich Black           | ![#020402](https://via.placeholder.com/10/020402?text=+) `#020402` |
-| Electric Green     | ![#112240](https://via.placeholder.com/10/112240?text=+) `#112240` |
-| Ao English  | ![#157F1F](https://via.placeholder.com/10/157F1F?text=+) `#157F1F` |
-| White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
-| Green          | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
+| Rich Black           | ![#000505](https://via.placeholder.com/10/000505?text=+) `#000505` |
+| Bright Navy Blue     | ![#2D7DD2](https://via.placeholder.com/10/2D7DD2?text=+) `#2D7DD2` |
+| Maximum Blue Green  | ![#2DC2BD](https://via.placeholder.com/10/2DC2BD?text=+) `#2DC2BD` |
+| White          | ![#F7F7FF](https://via.placeholder.com/10/F7F7FF?text=+) `#F7F7FF` |
+| Rich Black Lighter          | ![#07090F](https://via.placeholder.com/10/07090F?text=+) `#07090F` |
