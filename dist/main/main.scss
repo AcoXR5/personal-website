@@ -1,4 +1,50 @@
 @use  "componets" as q;
 body {
-    background-color: red;
+    background-color: q.$primary-1;
+    font-family: q.$fsBody;
+    font-size: q.$fs-sm;
+    color: q.$font;
+}
+.nav {
+    background-color: q.$primary-2;
+    width: 100%;
+    @include q.flexBetween;
+    position: fixed;
+    @include q.space(padding, all, 50px);
+    height: 100px;
+    backdrop-filter: blur(10px);
+    transition: all .25s cubic-bezier(.645,.045,.355,1);
+    filter: none;
+    z-index: 10;
+    &_d_menu {
+        @include q.flexCenter
+    }
+    &_n {
+        @include q.flexBetween;
+        position: relative;
+        width: 100%;
+        z-index: 11;
+        &_logo {
+            @include q.flexCenter;
+            img {
+                width: 44px;
+                height: 48px;
+            }
+        }
+        &_list {
+            @include q.flexBetween;
+        }
+        &_item {
+            position: relative;
+            @include q.space(margin, all, 0 5px 0 5px);        
+        }
+        &_link {
+            @include q.space(padding, all, 0 5px 0 5px);    
+            text-transform: uppercase;
+            font-weight: 550;
+            &:hover,&.active {
+                color: q.$accent;
+            }          
+        }
+    }
 }
