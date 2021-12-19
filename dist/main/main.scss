@@ -5,6 +5,7 @@ body {
     font-size: q.$fs-sm;
     color: q.$font;
 }
+// NAVBAR
 .nav {
     background-color: q.$primary-2;
     width: 100%;
@@ -16,8 +17,32 @@ body {
     transition: all .25s cubic-bezier(.645,.045,.355,1);
     filter: none;
     z-index: 10;
+    @include q.break(desktopS) {
+        padding: 0 40px;
+    }
+    @include q.break(tabletL) {
+        padding: 0 25px;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+        &.scrollUp {
+            height: 70px;
+            transform: translateY(0px);
+            background-color: q.$primary-2;
+            transition: 400ms ease-in-out;
+            box-shadow: 0 10px 30px -10px q.$primary-2;
+        }
+        &.scrollDown {
+            height: 70px;
+            transform: translateY(calc(70px * -1));
+            box-shadow: 0 10px 30px -10px var(q.$primary-2);
+        }
+
+    }
     &_d_menu {
-        @include q.flexCenter
+        @include q.flexCenter;
+        @include q.break(tabletL) {
+            display: none;
+        }
     }
     &_n {
         @include q.flexBetween;
@@ -27,8 +52,7 @@ body {
         &_logo {
             @include q.flexCenter;
             img {
-                width: 44px;
-                height: 48px;
+                width: 40px;
             }
         }
         &_list {
@@ -36,15 +60,209 @@ body {
         }
         &_item {
             position: relative;
-            @include q.space(margin, all, 0 5px 0 5px);        
+            @include q.space(margin, all, 0 12px 0 12px);
         }
         &_link {
-            @include q.space(padding, all, 0 5px 0 5px);    
+            @include q.space(padding, all, 0 12px 0 12px);
             text-transform: uppercase;
             font-weight: 550;
             &:hover,&.active {
                 color: q.$accent;
             }          
         }
+    }
+    &_m_menu {
+        display: none;
+        @include q.break(tabletL) {
+            display: block;
+        }
+        &_btn {
+            @include q.flexCenter;
+            position: relative;
+            @include q.space(padding, all, 5px);
+            @include q.space(margin, right, -15px);
+            bottom: 0;
+            border: 0;
+            background-color: transparent;
+            color: inherit;
+            z-index: 13;
+            text-transform: none;
+            transition-timing-function: linear;
+            transition-duration: 0.15s;
+            transition-property: opacity, filter;
+            &-in {
+                display: inline-block;
+                position: relative;
+                width: 40px;
+                height: 24px;
+                &-box {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: 30px;
+                    height: 2px;
+                    border-radius: 4px;
+                    background-color: q.$accent;
+                    transition: 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+                    transform: rotate(0deg);
+                    &.is-active {
+                        transform: rotate(225deg);
+                        &:before {
+                            width:100%;
+                            top: 0;
+                            opacity: 1;
+                            transform: rotate(90deg);
+                            transition: top 0.1s ease-out,opacity 0.1s ease-out 0.12s;
+                        }
+                        &:after {
+                            width: 100%;
+                            bottom: 0;
+                            transform: -90deg;
+                            transition: bottom 0.1s ease-out;
+                            //noinspection CssInvalidPropertyValue
+                            transform: 0.22s cubic-bezier(0.215,0.61,0.355,1) 0.12s;
+                        }
+                    }
+                    &:before,
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: auto;
+                        right: 0;
+                        width: 30px;
+                        height: 2px;
+                        border-radius: 4px;
+                        background-color: q.$accent;
+                        transition-timing-function: ease;
+                        transition-duration: 0.15s;
+                        transition-property: transform;
+                    }
+                    &:before {
+                        width: 120%;
+                        top: -10px;
+                        opacity: 1;
+                        transition: top 0.1s ease-in 0.25s,opacity 0.1s ease-in;
+                    }
+                    &:after {
+                        width: 80%;
+                        bottom: -10px;
+                        //noinspection CssInvalidPropertyValue
+                        transform: 0;
+                        transition: bottom 0.1s ease-in 0.25s;
+                        //noinspection CssInvalidPropertyValue
+                        transform: 0.22s cubic-bezier(0.55,0.055,0.675,0.19);
+                    }
+                }
+            }
+        }
+        &_b {
+            @include q.flexCenter;
+            position: fixed;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            padding: 50px 10px;
+            width: min(75vw, 400px);
+            height: 100vh;
+            z-index:9;
+            outline: 0;
+            background-color: #161616;
+            box-shadow: -10px 0px 30px -15px q.$primary-1;
+            visibility: hidden;
+            transform: translateX(100vw);
+            transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+            &.is-active {
+                visibility: visible !important;
+                transform: translateX(0) !important;
+            }
+            & nav {
+                @include q.flexBetween;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+
+                & ul {
+                    width: 100%;
+
+                    & li {
+                        position: relative;
+                        margin: 0 auto 20px;
+                        font-size: clamp(14px, 4vw, 20px);
+
+                        & a {
+                            display: inline-block;
+                            text-decoration: none;
+                            text-decoration-skip-ink: auto;
+                            color: inherit;
+                            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+                            width: 100%;
+                            padding: 3px 20px 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// Global configuration Pages
+main {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    padding: 200px 150px;
+    @media (max-width: 1080px) {
+        padding: 200px 100px;
+    }
+    @media (max-width: 768px) {
+        padding: 150px 50px;
+    }
+    @media (max-width: 480px) {
+        padding: 125px 25px;
+    }
+    &.fillHeight {
+        padding: 0px 150px;
+        @media (max-width: 1080px) {
+            padding: 0 100px;
+        }
+        @media (max-width: 768px) {
+            padding: 0 50px;
+        }
+        @media (max-width: 480px) {
+            padding: 0 25px;
+        }
+    }
+}
+section {
+    margin: 0px auto;
+    padding: 100px 0px;
+    max-width: 1000px;
+    @media (max-width: 768px) {
+        padding: 80px 0;
+    }
+
+    @media (max-width: 480px) {
+        padding: 60px 0;
+    }
+}
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container {
+
+}
+// Home
+.home {
+
+     .small-heading {
+         margin: 0px 0px 30px 4px;
+         font-weight: 400;
+         color: q.$accent;
+     }
+    h2.big-heading {
+        color: q.$accent;
     }
 }

@@ -1,4 +1,33 @@
 @use "colors" as c;
+@use "typography" as f;
+::selection {
+	background-color: c.$accent;
+	color: c.$font;
+}
+
+:focus {
+	outline: 2px dashed c.$accent;
+	outline-offset: 3px;
+}
+
+/* Scrollbar Styles */
+html {
+	scrollbar-width: thin;
+	scrollbar-color: c.$primary-2 c.$accent;
+}
+
+body::-webkit-scrollbar {
+	width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+	background: c.$primary-2;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: c.$accent;
+	border-radius: 10px;
+}
 * {
     margin: 0;
     padding: 0;
@@ -46,4 +75,13 @@ a, ul, li {
   display: flex;
   justify-content: space-between;
   align-items: center;  
+}
+.small-heading {
+	font-family: f.$fsBody;
+	font-size: clamp(14px,5vw,16px);
+}
+
+.big-heading {
+	font-family: f.$fsTitle;
+	font-size: clamp(35px,8vw,80px);
 }

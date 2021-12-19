@@ -58,31 +58,73 @@
     <header class="nav">
         <nav class="nav_n">
             <div class="nav_n_logo">
-                <img src="./dist/img/logo.svg" alt="Logo" srcset="">
+                <a href="#">
+                    <img src="./dist/img/logo.svg" alt="Logo" srcset="">
+                </a>
             </div>
             <div class="nav_d_menu">
                 <ul class="nav_n_list">
                     <li class="nav_n_item">
-                        <a href="http://" class="nav_n_link active">Home</a>
+                        <a href="#home" class="nav_n_link active">Home</a>
                     </li>
                     <li class="nav_n_item">
-                        <a href="http://" class="nav_n_link">About me</a>
+                        <a href="#about" class="nav_n_link">About me</a>
                     </li>
                     <li class="nav_n_item">
-                        <a href="http://" class="nav_n_link">Projects</a>
+                        <a href="#projects" class="nav_n_link">Projects</a>
                     </li>
                     <li class="nav_n_item">
-                        <a href="http://" class="nav_n_link">Contact me</a>
+                        <a href="#contact" class="nav_n_link">Contact me</a>
                     </li>
                 </ul>
+            </div>
+            <div class="nav_m_menu">
+                <button aria-label="Menu" class="nav_m_menu_btn">
+                    <div class="nav_m_menu_btn-in">
+                        <div class="nav_m_menu_btn-in-box"></div>
+                    </div>
+                </button>
+                <aside area-hidden="true" id="jawside" tabindex="-1" class="nav_m_menu_b">
+                    <nav>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#work">Work</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </aside>
             </div>
         </nav>
     </header>
     <div class="container">
-        <main class="fullPageWrapper">
-
+        <main class="fullPageWrapper fillHeight">
+            <section id="home" class="home">
+                <div>
+                    <p class="small-heading">Hello, I'm</p>
+                </div>
+                <div>
+                    <h1 class="big-heading">Aleksandar Jeremić</h1>
+                </div>
+                <div class="">
+                    <h2 class="big-heading">I build things for the web.</h2>
+                </div>
+                <div class="">
+                    <p class="desc">I'm a Freelance Web Developer based in Smederevo, Serbia, and I'm very passionate and dedicated to my work, I have acquired the skills necessary to build great and premium websites.</p>
+                </div>
+                <div class="">
+                    <a href="mailto:j.aleksandar2601@gmail.com" class="email-link fourth">Get in touch</a>
+                </div>
+            </section>
         </main>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script
+        src="https://kit.fontawesome.com/d782f7702a.js"
+        crossorigin="anonymous"
+></script>
+<script src="./dist/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+@mixin Button ($type:all, $amount:null, $color:null, $color2:null, $radius:null) {
+  @if $type == all {
+    padding: $amount;
+  }
+  background-color: $color;
+  color: $color2;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  border-radius: $radius;
+  line-height: 1;
+  @content;
+}
