@@ -1,0 +1,30 @@
+{
+  "short_name": "Aleksandar",
+  "name": "Aleksandar Jeremic",
+  "description": "Hire Professional Freelancer &amp; Front and Back End Developer Developer. Building animations and interactive experiences, hi-end solutions, website maintenance &amp; security",
+  "icons": [
+    {
+      "src": "img/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "img/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "img/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "display": "minimal-ui",
+  "orientation": "portrait-primary",
+  "theme_color": "#04b293",
+  "background_color": "#212428"
+}
