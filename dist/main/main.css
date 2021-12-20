@@ -195,8 +195,7 @@ body {
   width: 100%;
   bottom: 0;
   transform: -90deg;
-  transition: bottom 0.1s ease-out;
-  transform: 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+  transition: 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
 }
 .nav_m_menu_btn-in-box:before, .nav_m_menu_btn-in-box:after {
   content: "";
@@ -223,7 +222,6 @@ body {
   bottom: -10px;
   transform: 0;
   transition: bottom 0.1s ease-in 0.25s;
-  transform: 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .nav_m_menu_b {
   display: flex;
@@ -275,7 +273,7 @@ body {
 }
 
 main {
-  margin: 0px auto;
+  margin: 0 auto;
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
@@ -297,7 +295,11 @@ main {
   }
 }
 main.fillHeight {
-  padding: 0px 150px;
+  padding: 0 150px;
+}
+main.fillHeight.blur {
+  filter: blur(5px) brightness(0.7);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 @media (max-width: 1080px) {
   main.fillHeight {
@@ -316,8 +318,8 @@ main.fillHeight {
 }
 
 section {
-  margin: 0px auto;
-  padding: 100px 0px;
+  margin: 0 auto;
+  padding: 100px 0;
   max-width: 1000px;
 }
 @media (max-width: 768px) {
@@ -337,13 +339,61 @@ section {
   min-height: 100vh;
 }
 
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start !important;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .home .small-heading {
-  margin: 0px 0px 30px 4px;
+  margin: 0 0 30px 4px;
   font-weight: 400;
   color: #04b293;
 }
 .home h2.big-heading {
   color: #04b293;
+}
+.home .desc {
+  margin: 20px 0 0;
+  max-width: 540px;
+  color: #F7F7FF;
+  opacity: 0.55;
+  line-height: 23px;
+  font-weight: 500;
+}
+.home .email-link {
+  padding: 15px 25px 15px 25px;
+  background-color: transparent;
+  color: #F7F7FF;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  border-radius: 25px;
+  line-height: 1;
+  border: 1px solid #04b293;
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  margin-top: 50px;
+}
+.home .email-link.fourth {
+  border-color: #04b293;
+  color: #fff;
+  background-image: -webkit-linear-gradient(45deg, #04b293 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #04b293 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease-in-out;
+  transition: background 600ms ease-in-out;
+}
+.home .email-link.fourth:hover {
+  background-position: 0;
+  color: #F7F7FF;
 }
 
 /*# sourceMappingURL=main.css.map */

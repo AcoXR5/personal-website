@@ -118,9 +118,8 @@ body {
                             width: 100%;
                             bottom: 0;
                             transform: -90deg;
-                            transition: bottom 0.1s ease-out;
                             //noinspection CssInvalidPropertyValue
-                            transform: 0.22s cubic-bezier(0.215,0.61,0.355,1) 0.12s;
+                            transition: 0.22s cubic-bezier(0.215,0.61,0.355,1) 0.12s;
                         }
                     }
                     &:before,
@@ -150,8 +149,6 @@ body {
                         //noinspection CssInvalidPropertyValue
                         transform: 0;
                         transition: bottom 0.1s ease-in 0.25s;
-                        //noinspection CssInvalidPropertyValue
-                        transform: 0.22s cubic-bezier(0.55,0.055,0.675,0.19);
                     }
                 }
             }
@@ -207,7 +204,7 @@ body {
 }
 // Global configuration Pages
 main {
-    margin: 0px auto;
+    margin: 0 auto;
     width: 100%;
     max-width: 1600px;
     min-height: 100vh;
@@ -222,7 +219,11 @@ main {
         padding: 125px 25px;
     }
     &.fillHeight {
-        padding: 0px 150px;
+        padding: 0 150px;
+        &.blur {
+            filter: blur(5px) brightness(.7);
+            transition: all .25s cubic-bezier(.645,.045,.355,1);
+        }
         @media (max-width: 1080px) {
             padding: 0 100px;
         }
@@ -235,8 +236,8 @@ main {
     }
 }
 section {
-    margin: 0px auto;
-    padding: 100px 0px;
+    margin: 0 auto;
+    padding: 100px 0;
     max-width: 1000px;
     @media (max-width: 768px) {
         padding: 80px 0;
@@ -256,13 +257,52 @@ section {
 }
 // Home
 .home {
-
+    @include q.flexCenter;
+    align-items: flex-start !important;
+    flex-direction: column;
+    min-height: 100vh;
+    //@include q.space(margin, top, -50px);
+    //@include q.space(margin, left, -50px);
      .small-heading {
-         margin: 0px 0px 30px 4px;
+         margin: 0 0 30px 4px;
          font-weight: 400;
          color: q.$accent;
      }
     h2.big-heading {
         color: q.$accent;
+    }
+    .desc {
+        margin: 20px 0 0;
+        max-width: 540px;
+        color: q.$font;
+        opacity: 0.55;
+        line-height: 23px;
+        font-weight: 500;
+    }
+    .email-link {
+        @include q.Button(all, 15px 25px 15px 25px, transparent, q.$font, 25px) {
+            border: 1px solid q.$accent;
+            color: inherit;
+        }
+        display: inline-block;
+        text-decoration: none;
+        text-decoration-skip-ink: auto;
+        position: relative;
+        transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+        @include q.space(margin, top, 50px);
+        &.fourth {
+            border-color: q.$accent;
+            color: #fff;
+            background-image: -webkit-linear-gradient(45deg, q.$accent 50%, transparent 50%);
+            background-image: linear-gradient(45deg, q.$accent 50%, transparent 50%);
+            background-position: 100%;
+            background-size: 400%;
+            -webkit-transition: background 600ms ease-in-out;
+            transition: background 600ms ease-in-out;
+            &:hover {
+                background-position: 0;
+                color: q.$font;
+            }
+        }
     }
 }
