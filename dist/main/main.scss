@@ -262,7 +262,10 @@ section {
     flex-direction: column;
     min-height: 100vh;
     //@include q.space(margin, top, -50px);
-    //@include q.space(margin, left, -50px);
+    @include q.space(margin, left, -50px);
+    @include q.break(tabletL) {
+        @include q.space(margin, left, 0px);
+    }
      .small-heading {
          margin: 0 0 30px 4px;
          font-weight: 400;
